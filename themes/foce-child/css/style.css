@@ -1,0 +1,46 @@
+/*Animation rotation des fleurs*/
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after {
+  -webkit-animation: rotateEffect 7s linear infinite;
+          animation: rotateEffect 7s linear infinite;
+}
+
+@-webkit-keyframes rotateEffect {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateEffect {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/* Effet fade in sur toutes les sections*/
+.banner,
+.story,
+#studio {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease; /* Animation de transition */
+}
+
+.banner.show,
+.story.show,
+#studio.show {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */

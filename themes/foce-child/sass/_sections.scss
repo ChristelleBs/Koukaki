@@ -1,0 +1,13 @@
+/* Effet fade in sur toutes les sections*/
+.banner,
+.story,
+#studio {
+  opacity: 0;
+  transition: opacity 1s ease; /* Animation de transition */
+}
+
+.banner.show,
+.story.show,
+#studio.show {
+  opacity: 1;
+}

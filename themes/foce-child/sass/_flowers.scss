@@ -1,0 +1,18 @@
+/*Animation rotation des fleurs*/
+.story h2::after,
+.story__article::after,
+#studio h2::before,
+#studio h2::after,
+.site-footer::before,
+.site-footer::after {
+
+  animation: rotateEffect 7s linear infinite;
+}
+@keyframes rotateEffect {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
