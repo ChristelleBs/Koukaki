@@ -6,7 +6,7 @@ function enqueue_parent_styles() {
    
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
-
+//Chargement style child theme
 function child_enqueue_styles() {
   
     wp_enqueue_style( 'foce-child-theme-css', get_stylesheet_directory_uri() . '/css/style.css', array('parent-style'), CHILD_THEME_FOCE_CHILD_VERSION, 'all' );

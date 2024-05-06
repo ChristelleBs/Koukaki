@@ -1,12 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
-  // Sélectionne les sections à animer
-  const sectionsToAnimate = document.querySelectorAll('.banner, .story, #studio');
+  // Sélectionne toutes les sections à observer
+  const sections = document.querySelectorAll('.banner, .story#story, #studio');
 
-  // Ajoute la classe 'show' à chaque section avec un délai progressif
-  sectionsToAnimate.forEach((section, index) => {
-    setTimeout(() => {
-      section.classList.add('show');
-    }, index * 200); // Délai pour l'effet de décalage
+  // Créé un observer pour chaque section
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      // Si la section est visible, ajoute la classe 'show', sinon, retirez-la
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // Arrête de surveiller la section une fois qu'elle est apparue
+      }
+    });
+  }, { threshold: 0.5 }); // Se déclenche lorsque 50% de la section est visible
+
+  // Pour chaque section, commence à observer
+  sections.forEach(section => {
+    observer.observe(section);
   });
 });
- 
+
+
+
