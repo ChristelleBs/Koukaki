@@ -60,4 +60,22 @@
 .story#story,
 #studio {
   opacity: 0;
+}
+
+.story {
+  position: relative;
+  background-color: #FFF5E9;
+}
+
+#background-video {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }/*# sourceMappingURL=style.css.map */

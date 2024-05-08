@@ -1,9 +1,9 @@
-//Effet fade in browserifysur les sections
+//Effet fade in sur les sections
 document.addEventListener("DOMContentLoaded", function () {
   // Sélectionne toutes les sections à observer
   const sections = document.querySelectorAll(".banner, .story#story, #studio");
 
-  // Créé un observer pour chaque section
+  // Créer un observer pour chaque section
   const observer = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -22,3 +22,24 @@ document.addEventListener("DOMContentLoaded", function () {
     observer.observe(section);
   });
 });
+
+//Intégration de la vidéo + boucle
+/*document.addEventListener("DOMContentLoaded", function () {
+  // Récupération de l'élément vidéo
+  let video = document.getElementById("background-video");
+
+  if (video) {
+    // Ajout d'un événement pour redémarrer la vidéo à la fin
+    video.addEventListener(
+      "ended",
+      function () {
+        this.currentTime = 0; // Remise à zéro de la lecture à la fin de la vidéo
+        this.play(); // Redémarrage de la lecture
+      },
+      false
+    );
+
+    // Lancement automatique
+    video.play();
+  }
+});*/
