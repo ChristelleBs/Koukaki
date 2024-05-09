@@ -4,11 +4,13 @@ get_header();
 ?>
 
     <main id="primary" class="site-main">
-        <section class="banner">
-        <video  width="100%" height="100%" id="background-video" autoplay loop muted>
+        <section class="banner banner-container">
+       <video  width="100%" min-height="806px" id="background-video" autoplay loop muted>
             <source src="<?php echo get_stylesheet_directory_uri(); ?>/Assets/video/video.mp4" type="video/mp4">
         </video>
-        
+        <div class="video-overlay">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/Assets/images/logo.png" alt="Logo">
+            </div>
         </section>
         <section id="#story" class="story">
             <h2>L'histoire</h2>
