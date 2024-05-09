@@ -1,20 +1,56 @@
 /* Définit la position relative pour le conteneur de la vidéo */
 .banner-container {
     position: relative;
+    height: 100vh;
+    overflow: hidden;
 }
 
 /* Positionne le logo */
 .video-overlay {
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
-/* Maintient des proportions */
+/*Animation de flottement*/
+@keyframes floatAnimation {
+    0% {
+        transform: translate(-50%, -50%) rotate(-2deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(2deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-2deg);
+    }
+}
+
+/* Taille du logo et maintient des proportions */
 .video-overlay img {
-    display: block; 
-    margin: 0 auto; 
-    height: auto; 
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    width: auto;
+    max-width: 650px;
+    animation: floatAnimation 5s ease-in-out infinite;
 }
 
+/* Animation pour faire remonter le logo avec effet de parallaxe */
+@keyframes logoAnimation {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(-50%);
+    }
+}
+
+/* Applique l'animation au logo */
+.video-overlay {
+    animation: logoAnimation 2s ease-out forwards;
+}

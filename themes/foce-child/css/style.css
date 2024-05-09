@@ -83,20 +83,83 @@
 /* Définit la position relative pour le conteneur de la vidéo */
 .banner-container {
   position: relative;
+  height: 100vh;
+  overflow: hidden;
 }
 
 /* Positionne le logo */
 .video-overlay {
   position: absolute;
-  top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  margin-top: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 1;
 }
 
-/* Maintient des proportions */
+/*Animation de flottement*/
+@-webkit-keyframes floatAnimation {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(-2deg);
+            transform: translate(-50%, -50%) rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotate(2deg);
+            transform: translate(-50%, -50%) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(-2deg);
+            transform: translate(-50%, -50%) rotate(-2deg);
+  }
+}
+@keyframes floatAnimation {
+  0% {
+    -webkit-transform: translate(-50%, -50%) rotate(-2deg);
+            transform: translate(-50%, -50%) rotate(-2deg);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) rotate(2deg);
+            transform: translate(-50%, -50%) rotate(2deg);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) rotate(-2deg);
+            transform: translate(-50%, -50%) rotate(-2deg);
+  }
+}
+/* Taille du logo et maintient des proportions */
 .video-overlay img {
   display: block;
   margin: 0 auto;
   height: auto;
+  width: auto;
+  max-width: 650px;
+  -webkit-animation: floatAnimation 5s ease-in-out infinite;
+          animation: floatAnimation 5s ease-in-out infinite;
+}
+
+/* Animation pour faire remonter le logo avec effet de parallaxe */
+@-webkit-keyframes logoAnimation {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+@keyframes logoAnimation {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+/* Applique l'animation au logo */
+.video-overlay {
+  -webkit-animation: logoAnimation 2s ease-out forwards;
+          animation: logoAnimation 2s ease-out forwards;
 }/*# sourceMappingURL=style.css.map */
