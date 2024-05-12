@@ -1,0 +1,18 @@
+section.oscars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+#first-fleur {
+    position: absolute;
+    left: 4em;
+    top: 0em;
+}
+
+/* Suppression du pseudo-élément ::before first fleur */
+.site-footer::before {
+    display: none;
+}

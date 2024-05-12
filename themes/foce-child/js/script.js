@@ -23,23 +23,24 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-//Intégration de la vidéo + boucle
-/*document.addEventListener("DOMContentLoaded", function () {
-  // Récupération de l'élément vidéo
-  let video = document.getElementById("background-video");
+//Déplacement des fleurs du footer
+document.addEventListener("DOMContentLoaded", function () {
+  let footer = document.querySelector('.site-footer'); // Sélectionnez le footer
+  let oscarsSection = document.querySelector('.oscars'); // Sélectionnez la section .oscars
 
-  if (video) {
-    // Ajout d'un événement pour redémarrer la vidéo à la fin
-    video.addEventListener(
-      "ended",
-      function () {
-        this.currentTime = 0; // Remise à zéro de la lecture à la fin de la vidéo
-        this.play(); // Redémarrage de la lecture
-      },
-      false
-    );
+  // Créez un nouvel élément pour la première fleur
+  let firstFlower = document.createElement('div');
+  firstFlower.classList.add('first-fleur');
 
-    // Lancement automatique
-    video.play();
+  // Accédez au contenu du pseudo-élément ::before du footer
+  let footerBeforeContent = window.getComputedStyle(footer, '::before').getPropertyValue('content');
+
+  // Vérifiez si les éléments sont trouvés et que le contenu du pseudo-élément ::before est présent
+  if (oscarsSection && footerBeforeContent) {
+      // Ajoutez le contenu du pseudo-élément ::before à la première fleur
+      firstFlower.textContent = footerBeforeContent;
+
+      // Insérez la première fleur avant l'image dans la section .oscars
+      oscarsSection.insertBefore(firstFlower, oscarsSection.querySelector('img'));
   }
-});*/
+});

@@ -4,6 +4,7 @@
 .story__article::after,
 #studio h2::before,
 #studio h2::after,
+#first-fleur,
 .site-footer::before,
 .site-footer::after {
   -webkit-animation: rotateEffect 7s linear infinite;
@@ -162,4 +163,29 @@
 .video-overlay {
   -webkit-animation: logoAnimation 2s ease-out forwards;
           animation: logoAnimation 2s ease-out forwards;
+}
+
+section.oscars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+#first-fleur {
+  position: absolute;
+  left: 4em;
+  top: 0em;
+}
+
+/* Suppression du pseudo-élément ::before first fleur */
+.site-footer::before {
+  display: none;
 }/*# sourceMappingURL=style.css.map */
