@@ -4,15 +4,17 @@
 #studio h2::before,
 #studio h2::after,
 #first-fleur,
-.site-footer::before,
-.site-footer::after {
+#second-fleur,
+ul::after {
 
-  animation: rotateEffect 7s linear infinite;
+  animation: rotateEffect 9s linear infinite;
 }
+
 @keyframes rotateEffect {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

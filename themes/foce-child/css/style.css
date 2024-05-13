@@ -5,10 +5,10 @@
 #studio h2::before,
 #studio h2::after,
 #first-fleur,
-.site-footer::before,
-.site-footer::after {
-  -webkit-animation: rotateEffect 7s linear infinite;
-          animation: rotateEffect 7s linear infinite;
+#second-fleur,
+ul::after {
+  -webkit-animation: rotateEffect 9s linear infinite;
+          animation: rotateEffect 9s linear infinite;
 }
 
 @-webkit-keyframes rotateEffect {
@@ -175,8 +175,12 @@ section.oscars {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100vh;
+  height: 70vh;
   position: relative;
+}
+
+.oscars .logo-oscars {
+  margin-top: 120px;
 }
 
 #first-fleur {
@@ -185,7 +189,17 @@ section.oscars {
   top: 0em;
 }
 
-/* Suppression du pseudo-élément ::before first fleur */
+/* Suppression des fleurs du footer */
 .site-footer::before {
   display: none;
+}
+
+.site-footer::after {
+  display: none;
+}
+
+#second-fleur {
+  position: absolute;
+  right: -4em;
+  top: 0;
 }/*# sourceMappingURL=style.css.map */

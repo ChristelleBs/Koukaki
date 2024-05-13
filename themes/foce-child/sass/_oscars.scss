@@ -2,8 +2,12 @@ section.oscars {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 70vh;
     position: relative;
+}
+
+.oscars .logo-oscars {
+    margin-top: 120px;
 }
 
 #first-fleur {
@@ -12,7 +16,18 @@ section.oscars {
     top: 0em;
 }
 
-/* Suppression du pseudo-élément ::before first fleur */
+/* Suppression des fleurs du footer */
 .site-footer::before {
     display: none;
+}
+
+.site-footer::after {
+    display: none;
+
+}
+
+#second-fleur {
+    position: absolute;
+    right: -4em;
+    top: 0;
 }
