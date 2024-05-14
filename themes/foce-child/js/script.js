@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 //Animation des titres
 document.addEventListener("scroll", function () {
-  var titles = document.querySelectorAll(".title");
+  let titles = document.querySelectorAll(".title");
 
   titles.forEach(function (title) {
-    var rect = title.getBoundingClientRect();
-    var isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+    let rect = title.getBoundingClientRect();
+    let isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
     if (isInView) {
       title.classList.add("in-view");
     }
