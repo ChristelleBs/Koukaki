@@ -1,7 +1,9 @@
 //Effet fade in sur les sections
 document.addEventListener("DOMContentLoaded", function () {
   // Sélectionne toutes les sections à observer
-  const sections = document.querySelectorAll(".banner, .story#story, #studio");
+  const sections = document.querySelectorAll(
+    ".banner, .story#story, #studio,section.oscars"
+  );
 
   // Créer un observer pour chaque section
   const observer = new IntersectionObserver(
@@ -20,5 +22,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Pour chaque section, commence à observer
   sections.forEach((section) => {
     observer.observe(section);
+  });
+});
+//Animation des titres
+document.addEventListener("scroll", function () {
+  var titles = document.querySelectorAll(".title");
+
+  titles.forEach(function (title) {
+    var rect = title.getBoundingClientRect();
+    var isInView = rect.top >= 0 && rect.bottom <= window.innerHeight;
+    if (isInView) {
+      title.classList.add("in-view");
+    }
   });
 });

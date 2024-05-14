@@ -51,21 +51,11 @@ ul::after {
 }
 /* Applique l'animation à chaque section lorsqu'elle a la classe "show" */
 .banner.show,
-.story#story.show,
-#studio.show {
-  -webkit-animation: fade-in 1s ease forwards;
-          animation: fade-in 1s ease forwards;
-}
-
-.banner,
-.story#story,
-#studio {
-  opacity: 0;
-}
-
-.story {
-  position: relative;
-  background-color: #FFF5E9;
+section#story.story.show,
+#studio.show,
+.oscars.show {
+  -webkit-animation: fade-in 1s ease-in-out forwards !important;
+          animation: fade-in 1s ease-in-out forwards !important;
 }
 
 #background-video {
@@ -202,4 +192,26 @@ section.oscars {
   position: absolute;
   right: -4em;
   top: 0;
+}
+
+.title {
+  position: relative;
+  opacity: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+.title.in-view {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.title::before {
+  content: "";
+  position: absolute;
 }/*# sourceMappingURL=style.css.map */
