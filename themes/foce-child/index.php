@@ -16,8 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-<!-- Inclusion du CSS de Swiper -->
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/node_modules/swiper/swiper-bundle.min.css">
+
 		<?php
 		if ( have_posts() ) :
 
@@ -52,8 +51,7 @@ get_header();
 		?>
 
 	</main><!-- #main -->
-<!-- Inclusion du fichier JavaScript de Swiper -->
-<script src="<?php echo get_stylesheet_directory_uri(); ?>/js/swiper.js"></script>
+
 <?php
 get_sidebar();
-get_footer();
+get_footer(); 

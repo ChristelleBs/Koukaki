@@ -51,7 +51,7 @@ ul::after {
 }
 /* Applique l'animation à chaque section lorsqu'elle a la classe "show" */
 .banner.show,
-section#story.story.show,
+.story.show,
 #studio.show,
 .oscars.show {
   -webkit-animation: fade-in 1s ease-in-out forwards !important;
@@ -195,7 +195,6 @@ section.oscars {
 }
 
 .title {
-  position: relative;
   opacity: 0;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -203,6 +202,8 @@ section.oscars {
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease;
   transition: opacity 0.5s ease, transform 0.5s ease, -webkit-transform 0.5s ease;
+  display: block;
+  width: 100%;
 }
 
 .title.in-view {
@@ -211,7 +212,25 @@ section.oscars {
           transform: translateX(0);
 }
 
-.title::before {
-  content: "";
-  position: absolute;
+body {
+  position: relative;
+  height: 100%;
+}
+
+swiper-container {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+swiper-slide img {
+  display: block;
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

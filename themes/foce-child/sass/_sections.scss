@@ -11,7 +11,7 @@
 
 /* Applique l'animation à chaque section lorsqu'elle a la classe "show" */
 .banner.show,
-section#story.story.show,
+.story.show,
 #studio.show,
 .oscars.show {
   animation: fade-in 1s ease-in-out forwards !important;

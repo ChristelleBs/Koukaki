@@ -1,16 +1,13 @@
+//Animation des titres
 .title {
-    position: relative;
     opacity: 0;
     transform: translateX(-50%);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    display: block;
+    width: 100%;
 }
 
 .title.in-view {
     opacity: 1;
     transform: translateX(0);
-}
-
-.title::before {
-    content: "";
-    position: absolute;
 }
